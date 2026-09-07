@@ -1,0 +1,42 @@
+Algorithme ajouter_tache
+Variables
+    titre_de_tache : chaine de caractères
+    description_de_tache : chaine de cractères
+    date_fin : date
+    statut = "à faire" :chaine de cractéres
+Début
+    // Clique sur le bouton Ajouter une tache
+    évenement clique sur le bouton "Ajouter une tache"
+    Ouverture du formulaire d'ajout de tache
+
+    // Demander à l'utilisateur de saisir les informations de la tache
+    titre_de_tache = entrer("Titre de la tache")
+    description_de_tache = entrer("Description de la tache")
+    date_fin = entrer("Date de fin")
+
+    // Boucle erreur si il manque des informations
+    tant que titre_de_tache est vide ou description_de_tache est vide ou date_fin est vide
+        afficher("Erreur : Veuillez remplir tous les champs.")
+        titre_de_tache = entrer("Titre de la tache")
+        description_de_tache = entrer("Description de la tache")
+        date_fin = entrer("Date de fin")
+    FIN TANT QUE
+
+    // Créer une requête SQL pour insérer la tache dans la base de données
+    requete_sql = "INSERT INTO taches (titre, description, date_fin) VALUES (titre_de_tache, description_de_tache, date_fin)"
+
+    // Exécuter la requête SQL pour ajouter la tache à la base de données
+    exécuter_requete(requete_sql)
+
+    // Afficher un message de confirmation à l'utilisateur
+    afficher("La tache a été ajoutée avec succès !")
+Fin
+
+Algorithme vérification_tache
+Début
+    SI titre de la tache = "" OU decription = "" OU date = ""
+        Afficher("Il manque des information")
+    Sinon
+        Envoyer les informations
+    Fin SI
+Fin

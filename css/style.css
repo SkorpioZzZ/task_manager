@@ -1,0 +1,82 @@
+:root {
+    --background: #F8FAFC;
+    --surface: #FFFFFF;
+    --text: #0F172A;
+    --text-secondary: #64748B;
+    --primary: #2563EB;
+    --border: #E2E8F0;
+    --primary-hover: #1D4ED8;
+}
+
+body {
+    background-color: var(--background);
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.form-container {
+    max-width: 700px;
+    width: 100%;
+    background-color: var(--surface);
+    padding: 1em;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: center;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+
+    background-color: var(--surface);
+    border-radius: 30px;
+    border: 1px solid var(--border);
+}

@@ -1,6 +1,6 @@
 <?php
 
-// Création de la classe Database pour gérer la connexion à la base de données
+// Plan de construction de la base de donnée
 class Database
 {
     // Propriété pour stocker l'objet PDO

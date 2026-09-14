@@ -7,15 +7,17 @@ $user_id = $_SESSION['user_id'];
 $database = new Database();
 $pdo = $database->getConnection();
 
-$sql = "SELECT user_id, title, description, status, due_date FROM tasks WHERE user_id = :user_id";
+$sql = "SELECT id, user_id, title, description, status, due_date
+        FROM tasks
+        WHERE user_id = :user_id";
 
-$requete = $pdo->prepare($sql);
+$request = $pdo->prepare($sql);
 
-$requete->execute([
+$request->execute([
     'user_id' => $user_id
 ]);
 
-$tasks = $requete->fetchAll();
+$tasks = $request->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -35,11 +37,13 @@ $tasks = $requete->fetchAll();
         <h1>Liste des taches</h1>
 
         <?php foreach ($tasks as $task) { ?>
-            <div class="task">
-                <h2><?php echo $task['title']; ?></h2>
-                <p><?php echo $task['description']; ?></p>
-                <p><?php echo $task['status']; ?></p>
-                <p><?php echo $task['due_date']; ?></p>
+            <div class="liste_task">
+                <h2 class="title_task"><?php echo $task['title']; ?></h2>
+                <p class="description"><?php echo $task['description']; ?></p>
+                <p class="status"><?php echo $task['status']; ?></p>
+                <p class="due_date"><?php echo $task['due_date']; ?></p>
+                <a href="modify_task.php?id=<?php echo ($task['id']) ?>">Modifier</a>
+                <button class="delete">Supprimer</button>
             </div>
         <?php } ?>
 

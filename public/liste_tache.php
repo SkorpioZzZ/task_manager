@@ -43,7 +43,7 @@ $tasks = $request->fetchAll();
                 <p class="status"><?php echo $task['status']; ?></p>
                 <p class="due_date"><?php echo $task['due_date']; ?></p>
                 <a href="modify_task.php?id=<?php echo ($task['id']) ?>">Modifier</a>
-                <button class="delete">Supprimer</button>
+                <a href="delete_task.php?id=<?php echo ($task['id']) ?>">Supprimer</a>
             </div>
         <?php } ?>
 

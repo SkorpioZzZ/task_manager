@@ -1,15 +1,10 @@
 <?php
 
-// Connexion à la base de données MySQL
+require_once __DIR__ . '/env.php';
 
-// Adresse du serveur MySQL
-$host = 'localhost';
+loadEnv(__DIR__ . '/../.env');
 
-// Nom de la base de données
-$dbname = 'task_manager';
-
-// Nom d'utilisateur MySQL
-$username = 'root';
-
-// Mot de passe MySQL
-$password = '';
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASSWORD'];

@@ -22,6 +22,7 @@ $readTask->execute([
 
 $tasks = $readTask->fetch();
 
+// Récupération des données envoyé par le formulaire de modification
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title_tache = $_POST['title'];
     $descriptionTache = $_POST['description'];
@@ -32,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($title_tache == "" || $descriptionTache == "" || $dateFinTache == "" || $status == "") {
         echo ("Il manque des information");
     } else {
+
+        // Modification de la taches
         $sqlQuery = "UPDATE tasks
             SET title = :title, description = :description, status = :status, due_date = :due_date
             WHERE user_id = :user_id AND id = :id";

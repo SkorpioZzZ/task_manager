@@ -1,24 +1,24 @@
+<link href="/css/style.css" rel="stylesheet">
+
 <nav>
     <div class="header-menu">
         <a>Gestionnaire de taches</a>
-        <div class="menu">
-            <menu>
-                <li>
-                    <a href="/projet/task-manager/public/index.php">Home</a>
-                </li>
-                <li>
-                    <a href="/projet/task-manager/public/liste_tache.php">Liste des Tâches</a>
-                </li>
-                <li>
-                    <a href="/projet/task-manager/public/ajout_tache.php">Ajouter une Tâche</a>
-                </li>
-                <li>
-                    <a href="/projet/task-manager/public/login.php">Connexion</a>
-                </li>
-                <li>
-                    <a href="/projet/task-manager/public/logout.php">Déconnecion</a>
-                </li>
-            </menu>
-        </div>
+        <menu>
+            <li>
+                <a href="/public/index.php">Home</a>
+            </li>
+            <li>
+                <a href="/public/liste_tache.php">Liste des Tâches</a>
+            </li>
+            <li>
+                <a href="/public/ajout_tache.php">Ajouter une Tâche</a>
+            </li>
+            <li>
+                <a href="/public/login.php">Connexion</a>
+            </li>
+            <li>
+                <a href="/public/logout.php">Déconnexion</a>
+            </li>
+        </menu>
     </div>
 </nav>
